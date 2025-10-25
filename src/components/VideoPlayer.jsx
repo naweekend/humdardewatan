@@ -4,7 +4,7 @@ export default function VideoPlayer({ src, stopBeforeEnd = 0 }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // 🕒 Pause video X seconds before it ends
+  // Pause video X seconds before it ends
   useEffect(() => {
     const video = videoRef.current;
     if (!video || stopBeforeEnd <= 0) return;
@@ -20,6 +20,19 @@ export default function VideoPlayer({ src, stopBeforeEnd = 0 }) {
     return () => video.removeEventListener("timeupdate", handleTimeUpdate);
   }, [stopBeforeEnd]);
 
+  // Show play button when video ends
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      setIsPlaying(false);
+    };
+
+    video.addEventListener("ended", handleEnded);
+    return () => video.removeEventListener("ended", handleEnded);
+  }, []);
+
   const handleTogglePlay = () => {
     const video = videoRef.current;
     if (!video) return;
@@ -34,23 +47,21 @@ export default function VideoPlayer({ src, stopBeforeEnd = 0 }) {
   };
 
   return (
-    <div className="relative w-full overflow-hidden rounded-md group">
+    <div className="relative w-full overflow-hidden rounded-md">
       <video
+        muted
         ref={videoRef}
         src={src}
         className="w-full h-auto rounded-md"
         controls={false}
       />
 
-      {/* Circular Play/Pause button */}
+      {/* Play/Pause button */}
       <button
         onClick={handleTogglePlay}
-        className="absolute inset-0 flex items-center justify-center"
+        className="absolute inset-0 flex items-center justify-center z-10"
       >
-        <span
-          className={`flex items-center justify-center w-16 h-16 rounded-full bg-green-800/60 text-white transition hover:bg-emerald-800/80 ${isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-100"
-            }`}
-        >
+        <span className="flex items-center justify-center w-16 h-16 rounded-full bg-green-800/60 text-white hover:bg-emerald-800/80 transition">
           {isPlaying ? <PauseIcon /> : <PlayIcon />}
         </span>
       </button>

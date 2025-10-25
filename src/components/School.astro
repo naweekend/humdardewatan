@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import School1 from "../assets/school-1.png";
+import School2 from "../assets/school-2.png";
+import School3 from "../assets/school-3.png";
+import Crown from "../assets/crown.png";
+---
+
+<section
+  id="school-section"
+  class="bg-linear-to-b from-blue-50 via-teal-50 to-emerald-50"
+>
+  <div class="max-w-3xl mx-auto py-10">
+    <Image loading="eager"
+      class="mx-auto size-12 mb-2 drop-shadow-lg drop-shadow-amber-200"
+      src={Crown}
+      alt="award golden crown indicating that the humdard e watan school is a big achievement"
+    />
+    <h1
+      class="text-4xl font-bold text-center"
+      style={`font-family: "EB Garamond"`}
+    >
+      Our Proudest Achievement
+    </h1>
+    <p class="opacity-90 text-center mt-2">
+      Humdard-e-Watan School in Liaqatpur has now been educating hundreds of
+      orphans for free!
+    </p>
+
+    <!-- images -->
+    <div class="w-full flex items-center justify-center mt-5 p-4">
+      <div class="relative w-60 h-auto flex items-center justify-center">
+        <!-- Left Image -->
+        <Image loading="eager"
+          class="hover:scale-95 transition-all duration-250 border-3 rounded-md border-green-800 absolute top-0 left-[90%] rotate-10 z-1 opacity-90 scale-90"
+          src={School2}
+          alt="male disabled person thanking humdard-e-watan team for help"
+        />
+
+        <!-- Center Image -->
+        <Image loading="eager"
+          class="hover:scale-105 transition-all duration-250 border-3 rounded-md border-green-800 relative z-3 scale-100 shadow-xl"
+          src={School1}
+          alt="female old person thanking humdard-e-watan team for wheelchair"
+        />
+
+        <!-- Right Image -->
+        <Image loading="eager"
+          class="hover:scale-95 transition-all duration-250 border-3 rounded-md border-green-800 absolute top-0 right-[90%] -rotate-10 z-1 opacity-90 scale-90"
+          src={School3}
+          alt="male disabled person thanking humdard-e-watan team for wheelchair donation"
+        />
+      </div>
+    </div>
+  </div>
+</section>

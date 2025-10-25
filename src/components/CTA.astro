@@ -1,0 +1,47 @@
+---
+import WhatsappSVG from "./WhatsappSVG.astro";
+---
+
+<section
+  id="cta"
+  class="justify-center items-center py-20 bg-emerald-50 px-5 flex flex-col"
+>
+  <h1 style="font-family: 'Caprasimo';" class="text-3xl max-w-3xl text-center">
+    People like you were the ones who made this possible. Now its your turn to
+    join.
+  </h1>
+
+  <div
+    class="max-w-xl mt-8 text-center bg-[#066233] text-white rounded-xl shadow-[5px_5px_0px_0px] shadow-black p-8 md:p-12"
+  >
+    <h1
+      class="text-3xl md:text-4xl font-bold mb-4 text-shadow-xs text-shadow-black"
+      style="font-family: 'EB Garamond', serif;"
+    >
+      Donate to change the life of those in need
+    </h1>
+    <p class="opacity-90 mb-6">
+      Charity does not decrease wealth — <span class="opacity-100 font-semibold"
+        >Prophet Muhammad ﷺ</span
+      >
+    </p>
+    <div
+      class="mt-7 flex md:flex-row flex-col justify-center items-center gap-2"
+    >
+      <a
+        href="/contact"
+        class="py-3 px-8 transition-all duration-200 cursor-pointer hover:bg-white hover:text-black active:scale-95 max-md:w-full rounded-full bg-black text-white"
+      >
+        Contact Us
+      </a>
+
+      <a
+        href="https://wa.me/+447808703978"
+        class="py-3 px-8 transition-all duration-200 cursor-pointer bg-[#0CC143] text-white rounded-full max-md:w-full active:scale-95 flex justify-center items-center gap-2"
+      >
+        <WhatsappSVG />
+        <span> Whatsapp Us </span>
+      </a>
+    </div>
+  </div>
+</section>
