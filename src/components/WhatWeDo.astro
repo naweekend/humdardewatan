@@ -18,15 +18,12 @@ import VideoPlayer from "../components/VideoPlayer";
         <h1 style={`font-family: "Caprasimo"`} class="text-3xl mt-6">
           Clothes & Shoes
         </h1>
-        <p class="opacity-90">
+        <p class="opacity-90 mb-2">
           Providing free clothes and shoes to the people who cannot afford these
           necessities.
         </p>
 
-        <VideoPlayer
-          client:load
-          src={`https://3bdfp3k6mw.ufs.sh/f/HgeYL10jtGvQyw1h94Y162MLN7HSU0Oqg5GEhbrXAClFTKIV`}
-        />
+        <VideoPlayer client:load src={`/v/shoes.mp4`} />
 
         <span
           class="rounded-full absolute top-6 left-[48%] -translate-x-[50%] -translate-y-[50%] size-4 bg-red-500 shadow-[2px_2px_0px_0]"
@@ -40,15 +37,12 @@ import VideoPlayer from "../components/VideoPlayer";
         <h1 style={`font-family: "Caprasimo"`} class="text-3xl mt-6">
           Ramzan & Food Packages
         </h1>
-        <p class="opacity-90">
+        <p class="opacity-90 mb-2">
           Sharing the blessings of Ramzan by delivering essential food packages
           to families in need.
         </p>
 
-        <VideoPlayer
-          client:load
-          src={`https://3bdfp3k6mw.ufs.sh/f/HgeYL10jtGvQyw1h94Y162MLN7HSU0Oqg5GEhbrXAClFTKIV`}
-        />
+        <VideoPlayer client:load src={`/v/food.mp4`} />
 
         <span
           class="rounded-full absolute top-6 left-[48%] -translate-x-[50%] -translate-y-[50%] size-4 bg-red-500 shadow-[2px_2px_0px_0]"
@@ -62,37 +56,12 @@ import VideoPlayer from "../components/VideoPlayer";
         <h1 style={`font-family: "Caprasimo"`} class="text-3xl mt-6">
           Wheelchairs
         </h1>
-        <p class="opacity-90">
+        <p class="opacity-90 mb-2">
           Our organization is helping individuals overcome their disabilities by
           providing them wheelchairs.
         </p>
 
-        <VideoPlayer
-          client:load
-          src={`https://3bdfp3k6mw.ufs.sh/f/HgeYL10jtGvQJMRXcGjFSQ9OTK4qmaWuGxXflzhV1IwJ6cBH`}
-        />
-
-        <span
-          class="rounded-full absolute top-6 left-[48%] -translate-x-[50%] -translate-y-[50%] size-4 bg-red-500 shadow-[2px_2px_0px_0]"
-        ></span>
-      </div>
-
-      <!-- Free Medicine -->
-      <div
-        class="flex flex-col gap-2 mt-10 p-5 rounded-md w-80 aspect-square shadow-[4px_4px_0px_0] bg-yellow-50 relative"
-      >
-        <h1 style={`font-family: "Caprasimo"`} class="text-3xl mt-6">
-          Free Medicine
-        </h1>
-        <p class="opacity-90">
-          Providing essential medicines at no cost to those who cannot afford
-          healthcare.
-        </p>
-
-        <VideoPlayer
-          client:load
-          src={`https://3bdfp3k6mw.ufs.sh/f/HgeYL10jtGvQyw1h94Y162MLN7HSU0Oqg5GEhbrXAClFTKIV`}
-        />
+        <VideoPlayer client:load src={`/v/wheelchair.mp4`} />
 
         <span
           class="rounded-full absolute top-6 left-[48%] -translate-x-[50%] -translate-y-[50%] size-4 bg-red-500 shadow-[2px_2px_0px_0]"
@@ -106,15 +75,29 @@ import VideoPlayer from "../components/VideoPlayer";
         <h1 style={`font-family: "Caprasimo"`} class="text-3xl mt-6">
           Sewing Machines
         </h1>
-        <p class="opacity-90">
+        <p class="opacity-90 mb-2">
           Providing sewing machines to help women start local businesses and
           earn a sustainable livelihood.
         </p>
+        <VideoPlayer client:load src={`/v/sewing.mp4`} />
+        <span
+          class="rounded-full absolute top-6 left-[48%] -translate-x-[50%] -translate-y-[50%] size-4 bg-red-500 shadow-[2px_2px_0px_0]"
+        ></span>
+      </div>
 
-        <VideoPlayer
-          client:load
-          src={`https://3bdfp3k6mw.ufs.sh/f/HgeYL10jtGvQyw1h94Y162MLN7HSU0Oqg5GEhbrXAClFTKIV`}
-        />
+      <!-- Water Pump -->
+      <div
+        class="flex flex-col gap-2 mt-10 p-5 rounded-md w-80 aspect-square shadow-[4px_4px_0px_0] bg-yellow-50 relative"
+      >
+        <h1 style={`font-family: "Caprasimo"`} class="text-3xl mt-6">
+          Water Pump
+        </h1>
+        <p class="opacity-90 mb-2">
+          Providing water pumps to help communities get access to safe and
+          healthy drinking water.
+        </p>
+
+        <VideoPlayer client:load src={`/v/pump.mp4`} />
 
         <span
           class="rounded-full absolute top-6 left-[48%] -translate-x-[50%] -translate-y-[50%] size-4 bg-red-500 shadow-[2px_2px_0px_0]"
