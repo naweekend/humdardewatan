@@ -7,6 +7,8 @@ import react from '@astrojs/react';
 
 import node from '@astrojs/node';
 
+import vercel from '@astrojs/vercel';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -15,7 +17,5 @@ export default defineConfig({
 
   integrations: [react()],
 
-  adapter: node({
-    mode: 'standalone',
-  }),
+  adapter: vercel(),
 });
