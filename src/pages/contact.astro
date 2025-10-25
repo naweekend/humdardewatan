@@ -5,10 +5,12 @@ import ImageStack from "../components/ImageStack.astro";
 ---
 
 <Layout>
-  <main class="max-w-7xl mx-auto md:py-20 py-10 flex md:flex-row flex-col justify-center items-center gap-10 md:gap-30">
+  <main
+    class="max-w-7xl mx-auto md:py-20 py-10 flex md:flex-row flex-col justify-center items-center gap-10 md:gap-30"
+  >
     <!-- form section -->
-    <div class="md:w-1/2 w-full px-5" style={`font-family: "EB Garamond"`}>
-      <form action="" class="gap-5 flex flex-col">
+    <!-- <div class="md:w-1/2 w-full px-5" style={`font-family: "EB Garamond"`}>
+      <form action="/api/messages" method="POST" class="gap-5 flex flex-col">
         <h1 class="text-4xl" style={`font-family: "Caprasimo"`}>Contact Us</h1>
         <input
           type="text"
@@ -46,6 +48,103 @@ import ImageStack from "../components/ImageStack.astro";
           >
         </button>
       </form>
+    </div> -->
+
+    <div class="md:w-1/2 w-full px-5" style={`font-family: "EB Garamond"`}>
+      <form id="contact-form" class="gap-5 flex flex-col">
+        <h1 class="text-4xl" style={`font-family: "Caprasimo"`}>Contact Us</h1>
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          class="border-b py-3 outline-0 text-2xl w-full"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          class="border-b py-3 outline-0 text-2xl w-full"
+          required
+        />
+        <textarea
+          name="message"
+          placeholder="I want to donate 10£.."
+          class="border-b py-3 outline-0 text-2xl w-full"
+          required></textarea>
+
+        <button
+          type="submit"
+          style={`font-family: "Inter"`}
+          class="hover:bg-emerald-700 transition-all duration-250 active:scale-95 text-2xl bg-green-700 py-4 px-6 text-white flex justify-center items-center cursor-pointer rounded-full gap-2 group"
+        >
+          <span> Send Message </span>
+          <svg
+            class="group-hover:translate-x-2 transition-all duration-250"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-send-horizontal-icon lucide-send-horizontal"
+          >
+            <path
+              d="M3.714 3.048a.498.498 0 0 0-.683.627l2.843 7.627a2 2 0 0 1 0 1.396l-2.842 7.627a.498.498 0 0 0 .682.627l18-8.5a.5.5 0 0 0 0-.904z"
+            ></path>
+            <path d="M6 12h16"></path>
+          </svg>
+        </button>
+
+        <!-- Feedback messages -->
+        <p id="success-msg" class="text-green-600 text-2xl mt-2 hidden">
+          Message sent successfully!
+        </p>
+        <p id="error-msg" class="text-red-600 text-2xl mt-2 hidden">
+          Something went wrong.
+        </p>
+      </form>
+
+      <script type="module">
+        const form = document.getElementById("contact-form");
+        const successMsg = document.getElementById("success-msg");
+        const errorMsg = document.getElementById("error-msg");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault(); // Prevent default GET/POST behavior
+
+          successMsg.classList.add("hidden");
+          errorMsg.classList.add("hidden");
+
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+
+          try {
+            const res = await fetch("/api/messages", {
+              method: "POST",
+              body: JSON.stringify(data),
+              headers: { "Content-Type": "application/json" },
+            });
+
+            const result = await res.json();
+
+            if (result.success) {
+              successMsg.classList.remove("hidden");
+              form.reset();
+            } else {
+              errorMsg.textContent = result.error || "Something went wrong.";
+              errorMsg.classList.remove("hidden");
+            }
+          } catch (err) {
+            console.error(err);
+            errorMsg.classList.remove("hidden");
+          }
+        });
+      </script>
     </div>
 
     <div class="w-1/2 px-5 flex justify-center items-center">

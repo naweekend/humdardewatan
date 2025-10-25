@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "push": "drizzle-kit push",
+    "studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@astrojs/db": "^0.18.1",
@@ -25,6 +27,7 @@
     "tailwindcss": "^4.1.16"
   },
   "devDependencies": {
-    "daisyui": "^5.3.9"
+    "daisyui": "^5.3.9",
+    "drizzle-kit": "^0.31.5"
   }
 }
