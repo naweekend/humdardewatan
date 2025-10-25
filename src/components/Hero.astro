@@ -1,0 +1,31 @@
+---
+import WhatsappSVG from "./WhatsappSVG.astro";
+---
+
+<main class="w-full">
+  <div class="max-w-3xl mx-auto py-20 px-5 text-center">
+    <h1 class="text-5xl" style={`font-family: "Caprasimo"`}>
+      A Simple Act of Charity Can Change a Lifetime
+    </h1>
+    <p class="mt-5">
+      Humdard e Watan brings hope, oppurtunity and change to people in need.
+    </p>
+
+    <div
+      class="mt-7 flex md:flex-row flex-col justify-center items-center gap-2"
+    >
+      <a href="/contact"
+        class="py-3 px-8 transition-all duration-200 cursor-pointer bg-green-800 text-white active:scale-95 max-md:w-full rounded-full hover:bg-emerald-800"
+      >
+        Contact Us
+      </a>
+
+      <button
+        class="py-3 px-8 transition-all duration-200 cursor-pointer bg-[#0CC143] text-white rounded-full max-md:w-full active:scale-95 flex justify-center items-center gap-2"
+      >
+        <WhatsappSVG />
+        <span> Whatsapp Us </span>
+      </button>
+    </div>
+  </div>
+</main>
